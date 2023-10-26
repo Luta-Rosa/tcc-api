@@ -1,6 +1,8 @@
 package com.example.tccapi.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -14,11 +16,14 @@ public class Usuarios {
     private String nome;
     private String email;
     private String senha;
-    private String cidade;
 
     @ManyToOne
-    @JoinColumn(name = "idMapa")
-    private Mapa mapa;
+    @JoinColumn(name = "idCidade")
+    private Cidade cidade;
+
+    @OneToMany(mappedBy = "usuarios")
+    private List<MensagemChat> mensagens = new ArrayList<>();
+
 
     public Integer getIdUsuarios() {
         return idUsuarios;
@@ -52,20 +57,20 @@ public class Usuarios {
         this.senha = senha;
     }
 
-    public Mapa getMapa() {
-        return mapa;
-    }
-
-    public void setMapa(Mapa mapa) {
-        this.mapa = mapa;
-    }
-
-    public String getCidade() {
+    public Cidade getCidade() {
         return cidade;
     }
 
-    public void setCidade(String cidade) {
+    public void setCidade(Cidade cidade) {
         this.cidade = cidade;
+    }
+
+    public List<MensagemChat> getMensagens() {
+        return mensagens;
+    }
+
+    public void setMensagens(List<MensagemChat> mensagens) {
+        this.mensagens = mensagens;
     }
 
     @Override

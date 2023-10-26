@@ -16,10 +16,10 @@ public class Mapa {
 
     private Integer idMapa;
     private String descricao;
-    private String cidade;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "mapa")
+    @ManyToOne
+    @JoinColumn(name = "idCidade")
+    private Cidade cidade;
 
     public Integer getIdMapa() {
         return idMapa;
@@ -37,11 +37,11 @@ public class Mapa {
         this.descricao = descricao;
     }
 
-    public String getCidade() {
+    public Cidade getCidade() {
         return cidade;
     }
 
-    public void setCidade(String cidade) {
+    public void setCidade(Cidade cidade) {
         this.cidade = cidade;
     }
 
