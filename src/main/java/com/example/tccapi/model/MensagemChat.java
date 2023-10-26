@@ -17,7 +17,7 @@ public class MensagemChat {
 
     @ManyToOne
     @JoinColumn(name = "idUsuarios")
-    private Usuarios usuario;
+    private Usuarios usuarios;
 
     public Integer getIdMsg() {
         return idMsg;
@@ -35,12 +35,12 @@ public class MensagemChat {
         this.mensagem = mensagem;
     }
 
-    public Usuarios getUsuario() {
-        return usuario;
+    public Usuarios getUsuarios() {
+        return usuarios;
     }
 
-    public void setUsuario(Usuarios usuario) {
-        this.usuario = usuario;
+    public void setUsuarios(Usuarios usuarios) {
+        this.usuarios = usuarios;
     }
 
     @Override
