@@ -15,6 +15,9 @@ public class Mapa {
     private Integer idMapa;
     private Integer localizacao;
 
+    @OneToMany(mappedBy = "mapa")
+    private List<Usuarios> usuariosMapa = new ArrayList<>();
+
     public Integer getIdMapa() {
         return idMapa;
     }
@@ -29,6 +32,14 @@ public class Mapa {
 
     public void setLocalizacao(Integer localizacao) {
         this.localizacao = localizacao;
+    }
+
+    public List<Usuarios> getUsuariosMapa() {
+        return usuariosMapa;
+    }
+
+    public void setUsuariosMapa(List<Usuarios> usuariosMapa) {
+        this.usuariosMapa = usuariosMapa;
     }
 
     @Override

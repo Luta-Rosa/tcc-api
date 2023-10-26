@@ -16,6 +16,8 @@ public class Usuarios {
     private String senha;
     private String confirmaSenha;
 
+    @ManyToOne
+
     public Integer getIdUsuarios() {
         return idUsuarios;
     }

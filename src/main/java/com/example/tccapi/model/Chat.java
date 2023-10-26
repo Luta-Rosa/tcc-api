@@ -1,6 +1,8 @@
 package com.example.tccapi.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -12,6 +14,11 @@ public class Chat {
 
     private Integer idChat;
     private String mensagem;
+
+    //muitos usuarios para um chat
+    @OneToMany (mappedBy = "chat")
+    private List<Usuarios> usuariosChat = new ArrayList<>();
+
 
     public Integer getIdChat() {
         return idChat;
@@ -27,6 +34,14 @@ public class Chat {
 
     public void setMensagem(String mensagem) {
         this.mensagem = mensagem;
+    }
+
+    public List<Usuarios> getUsuariosChat() {
+        return usuariosChat;
+    }
+
+    public void setUsuariosChat(List<Usuarios> usuariosChat) {
+        this.usuariosChat = usuariosChat;
     }
 
     @Override
