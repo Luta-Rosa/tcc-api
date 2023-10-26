@@ -1,5 +1,7 @@
 package com.example.tccapi.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +17,7 @@ public class Mapa {
     private Integer idMapa;
     private Integer localizacao;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "mapa")
     private List<Usuarios> usuariosMapa = new ArrayList<>();
 

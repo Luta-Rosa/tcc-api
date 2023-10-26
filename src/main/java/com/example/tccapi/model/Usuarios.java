@@ -17,6 +17,12 @@ public class Usuarios {
     private String confirmaSenha;
 
     @ManyToOne
+    @JoinColumn(name="idChat")
+    private Chat chat;
+
+    @ManyToOne
+    @JoinColumn(name = "idMapa")
+    private Mapa mapa;
 
     public Integer getIdUsuarios() {
         return idUsuarios;
@@ -56,6 +62,22 @@ public class Usuarios {
 
     public void setConfirmaSenha(String confirmaSenha) {
         this.confirmaSenha = confirmaSenha;
+    }
+
+    public Chat getChat() {
+        return chat;
+    }
+
+    public void setChat(Chat chat) {
+        this.chat = chat;
+    }
+
+    public Mapa getMapa() {
+        return mapa;
+    }
+
+    public void setMapa(Mapa mapa) {
+        this.mapa = mapa;
     }
 
     @Override

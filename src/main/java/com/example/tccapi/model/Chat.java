@@ -1,5 +1,7 @@
 package com.example.tccapi.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +18,7 @@ public class Chat {
     private String mensagem;
 
     //muitos usuarios para um chat
+    @JsonIgnore
     @OneToMany (mappedBy = "chat")
     private List<Usuarios> usuariosChat = new ArrayList<>();
 
