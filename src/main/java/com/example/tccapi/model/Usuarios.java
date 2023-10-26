@@ -14,11 +14,7 @@ public class Usuarios {
     private String nome;
     private String email;
     private String senha;
-    private String confirmaSenha;
-
-    @ManyToOne
-    @JoinColumn(name="idChat")
-    private Chat chat;
+    private String cidade;
 
     @ManyToOne
     @JoinColumn(name = "idMapa")
@@ -56,28 +52,20 @@ public class Usuarios {
         this.senha = senha;
     }
 
-    public String getConfirmaSenha() {
-        return confirmaSenha;
-    }
-
-    public void setConfirmaSenha(String confirmaSenha) {
-        this.confirmaSenha = confirmaSenha;
-    }
-
-    public Chat getChat() {
-        return chat;
-    }
-
-    public void setChat(Chat chat) {
-        this.chat = chat;
-    }
-
     public Mapa getMapa() {
         return mapa;
     }
 
     public void setMapa(Mapa mapa) {
         this.mapa = mapa;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
     }
 
     @Override

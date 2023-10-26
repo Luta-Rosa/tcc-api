@@ -15,11 +15,11 @@ public class Mapa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Integer idMapa;
-    private Integer localizacao;
+    private String descricao;
+    private String cidade;
 
     @JsonIgnore
     @OneToMany(mappedBy = "mapa")
-    private List<Usuarios> usuariosMapa = new ArrayList<>();
 
     public Integer getIdMapa() {
         return idMapa;
@@ -29,20 +29,20 @@ public class Mapa {
         this.idMapa = idMapa;
     }
 
-    public Integer getLocalizacao() {
-        return localizacao;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setLocalizacao(Integer localizacao) {
-        this.localizacao = localizacao;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
-    public List<Usuarios> getUsuariosMapa() {
-        return usuariosMapa;
+    public String getCidade() {
+        return cidade;
     }
 
-    public void setUsuariosMapa(List<Usuarios> usuariosMapa) {
-        this.usuariosMapa = usuariosMapa;
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
     }
 
     @Override
