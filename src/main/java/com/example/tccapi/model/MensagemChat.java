@@ -16,7 +16,7 @@ public class MensagemChat {
     private String mensagem;
 
     @ManyToOne
-    @JoinColumn(name = "idUsuarios")
+    @JoinColumn(name = "id_usuarios")
     private Usuarios usuarios;
 
     public Integer getIdMsg() {

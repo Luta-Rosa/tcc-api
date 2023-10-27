@@ -20,11 +20,11 @@ public class Cidade {
 
     @JsonIgnore
     @OneToMany (mappedBy = "cidade")
-    private List<Mapa> mapaLocais = new ArrayList<>();
+    private List<Mapa> mapa = new ArrayList<>();
 
     @JsonIgnore
     @OneToMany (mappedBy = "cidade")
-    private List<Usuarios> usuariosCidade = new ArrayList<>();
+    private List<Usuarios> usuarios = new ArrayList<>();
 
 
     public Integer getIdCidade() {
@@ -52,19 +52,19 @@ public class Cidade {
     }
 
     public List<Mapa> getMapaLocais() {
-        return mapaLocais;
+        return mapa;
     }
 
     public void setMapaLocais(List<Mapa> mapaLocais) {
-        this.mapaLocais = mapaLocais;
+        this.mapa = mapaLocais;
     }
 
     public List<Usuarios> getUsuariosCidade() {
-        return usuariosCidade;
+        return usuarios;
     }
 
     public void setUsuariosCidade(List<Usuarios> usuariosCidade) {
-        this.usuariosCidade = usuariosCidade;
+        this.usuarios = usuariosCidade;
     }
 
     @Override

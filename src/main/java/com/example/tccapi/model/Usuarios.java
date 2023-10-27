@@ -18,7 +18,7 @@ public class Usuarios {
     private String senha;
 
     @ManyToOne
-    @JoinColumn(name = "idCidade")
+    @JoinColumn(name = "id_cidade")
     private Cidade cidade;
 
     @OneToMany(mappedBy = "usuarios")

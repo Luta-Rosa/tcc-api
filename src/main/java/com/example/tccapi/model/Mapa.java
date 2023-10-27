@@ -9,7 +9,6 @@ import java.util.Objects;
 
 @Entity
 @Table(name ="mapa")
-
 public class Mapa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,7 +17,7 @@ public class Mapa {
     private String descricao;
 
     @ManyToOne
-    @JoinColumn(name = "idCidade")
+    @JoinColumn(name = "id_cidade")
     private Cidade cidade;
 
     public Integer getIdMapa() {
