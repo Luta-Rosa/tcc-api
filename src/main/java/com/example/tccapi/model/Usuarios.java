@@ -1,5 +1,7 @@
 package com.example.tccapi.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,10 +19,13 @@ public class Usuarios {
     private String email;
     private String senha;
 
+
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "id_cidade")
     private Cidade cidade;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "usuarios")
     private List<MensagemChat> mensagens = new ArrayList<>();
 

@@ -16,6 +16,7 @@ public class Mapa {
     private Integer idMapa;
     private String descricao;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "id_cidade")
     private Cidade cidade;
