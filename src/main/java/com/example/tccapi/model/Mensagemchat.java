@@ -1,30 +1,28 @@
 package com.example.tccapi.model;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 @Entity
-@Table(name ="mensagemChat")
+@Table(name ="mensagemchat")
 
-public class MensagemChat {
+public class Mensagemchat {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private Integer idMsg;
+    private Integer idmsg;
     private String mensagem;
 
     @ManyToOne
     @JoinColumn(name = "id_usuarios")
     private Usuarios usuarios;
 
-    public Integer getIdMsg() {
-        return idMsg;
+    public Integer getIdmsg() {
+        return idmsg;
     }
 
-    public void setIdMsg(Integer idMsg) {
-        this.idMsg = idMsg;
+    public void setIdmsg(Integer idmsg) {
+        this.idmsg = idmsg;
     }
 
     public String getMensagem() {
@@ -47,12 +45,12 @@ public class MensagemChat {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        MensagemChat that = (MensagemChat) o;
-        return idMsg.equals(that.idMsg);
+        Mensagemchat that = (Mensagemchat) o;
+        return idmsg.equals(that.idmsg);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idMsg);
+        return Objects.hash(idmsg);
     }
 }

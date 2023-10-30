@@ -27,7 +27,7 @@ public class Usuarios {
 
     @JsonIgnore
     @OneToMany(mappedBy = "usuarios")
-    private List<MensagemChat> mensagens = new ArrayList<>();
+    private List<Mensagemchat> mensagens = new ArrayList<>();
 
 
     public Integer getIdUsuarios() {
@@ -70,11 +70,11 @@ public class Usuarios {
         this.cidade = cidade;
     }
 
-    public List<MensagemChat> getMensagens() {
+    public List<Mensagemchat> getMensagens() {
         return mensagens;
     }
 
-    public void setMensagens(List<MensagemChat> mensagens) {
+    public void setMensagens(List<Mensagemchat> mensagens) {
         this.mensagens = mensagens;
     }
 

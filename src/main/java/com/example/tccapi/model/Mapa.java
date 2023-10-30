@@ -13,7 +13,7 @@ public class Mapa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private Integer idMapa;
+    private Integer idmapa;
     private String descricao;
 
     @JsonIgnore
@@ -21,12 +21,12 @@ public class Mapa {
     @JoinColumn(name = "id_cidade")
     private Cidade cidade;
 
-    public Integer getIdMapa() {
-        return idMapa;
+    public Integer getIdmapa() {
+        return idmapa;
     }
 
-    public void setIdMapa(Integer idMapa) {
-        this.idMapa = idMapa;
+    public void setIdmapa(Integer idmapa) {
+        this.idmapa = idmapa;
     }
 
     public String getDescricao() {
@@ -50,12 +50,12 @@ public class Mapa {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Mapa mapa = (Mapa) o;
-        return idMapa.equals(mapa.idMapa);
+        return idmapa.equals(mapa.idmapa);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idMapa);
+        return Objects.hash(idmapa);
     }
 }
 

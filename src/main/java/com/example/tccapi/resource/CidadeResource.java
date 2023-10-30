@@ -37,7 +37,7 @@ public class CidadeResource {
     //Função para criação de dados no banco
     @PostMapping("/criar")
     public ResponseEntity<Cidade> criar(@RequestBody Cidade cidade, HttpServletResponse httpServletResponse) {
-        Cidade cidadeSalvo = cidadeRepository.save(cidade);,
+        Cidade cidadeSalvo = cidadeRepository.save(cidade);
         return ResponseEntity.status(HttpStatus.CREATED). body(cidadeSalvo);
     }
 
