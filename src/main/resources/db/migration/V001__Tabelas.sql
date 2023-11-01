@@ -22,7 +22,9 @@ CREATE TABLE usuarios (
 
 CREATE TABLE mensagemChat (
     id_msg BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    mensagem VARCHAR(140) NOT NULL
+    mensagem VARCHAR(140) NOT NULL,
+    id_usuarios BIGINT NOT NULL,
+    FOREIGN KEY (id_usuarios) REFERENCES usuarios(id_usuarios)
 );
 
 INSERT INTO cidade (nome, UF) VALUES ('LP', 'SP');

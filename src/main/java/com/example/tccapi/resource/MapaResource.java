@@ -20,8 +20,8 @@ public class MapaResource {
     private MapaRepository mapaRepository;
 
     //lembrando que o mapa é o local
-    public Mapa buscarMapaExistentes(Integer idmapa){
-        Optional<Mapa> mapaOptional = mapaRepository.findById(idmapa);
+    public Mapa buscarMapaExistentes(Integer idMapa){
+        Optional<Mapa> mapaOptional = mapaRepository.findById(idMapa);
         if(!mapaOptional.isPresent()){
             throw new IllegalArgumentException();
         }
@@ -39,16 +39,16 @@ public class MapaResource {
         return ResponseEntity.status(HttpStatus.CREATED). body(mapaSalvo);
     }
 
-    @PutMapping("/{idmapa}")
-    public Mapa atualizar(@PathVariable Integer idmapa, @RequestBody Mapa mapa) {
-        Mapa mapaSalvo = buscarMapaExistentes(idmapa);
-        BeanUtils.copyProperties(mapa, mapaSalvo, "idmapa");
+    @PutMapping("/{idMapa}")
+    public Mapa atualizar(@PathVariable Integer idMapa, @RequestBody Mapa mapa) {
+        Mapa mapaSalvo = buscarMapaExistentes(idMapa);
+        BeanUtils.copyProperties(mapa, mapaSalvo, "idMapa");
 
         return mapaRepository.save(mapaSalvo);
     }
 
-    @DeleteMapping("/{idmapa}")
-    public void remover(@PathVariable Integer idmapa) {
-        mapaRepository.deleteById(idmapa);
+    @DeleteMapping("/{idMapa}")
+    public void remover(@PathVariable Integer idMapa) {
+        mapaRepository.deleteById(idMapa);
     }
 }

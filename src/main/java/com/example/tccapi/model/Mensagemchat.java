@@ -10,19 +10,20 @@ public class Mensagemchat {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private Integer idmsg;
+    private Integer idMsg;
     private String mensagem;
 
     @ManyToOne
     @JoinColumn(name = "id_usuarios")
     private Usuarios usuarios;
 
-    public Integer getIdmsg() {
-        return idmsg;
+
+    public Integer getIdMsg() {
+        return idMsg;
     }
 
-    public void setIdmsg(Integer idmsg) {
-        this.idmsg = idmsg;
+    public void setIdMsg(Integer idMsg) {
+        this.idMsg = idMsg;
     }
 
     public String getMensagem() {
@@ -46,11 +47,11 @@ public class Mensagemchat {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Mensagemchat that = (Mensagemchat) o;
-        return idmsg.equals(that.idmsg);
+        return idMsg.equals(that.idMsg);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idmsg);
+        return Objects.hash(idMsg);
     }
 }

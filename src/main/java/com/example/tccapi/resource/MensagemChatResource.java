@@ -40,16 +40,16 @@ public class MensagemChatResource {
     }
 
     //Função para editar os dados
-    @PutMapping("/{idmsg}")
+    @PutMapping("/{idMsg}")
     public Mensagemchat atualizar(@PathVariable Integer idMsg, @RequestBody Mensagemchat mensagemChat) {
         Mensagemchat mensagemSalva = buscarMensagensExistentes(idMsg);
-        BeanUtils.copyProperties(mensagemChat, mensagemSalva, "idmsg");
+        BeanUtils.copyProperties(mensagemChat, mensagemSalva, "idMsg");
 
         return mensagemChatRepository.save(mensagemSalva);
     }
 
-    @DeleteMapping("/{idmsg}")
-    public void remover(@PathVariable Integer idmsg) {
-        mensagemChatRepository.deleteById(idmsg);
+    @DeleteMapping("/{idMsg}")
+    public void remover(@PathVariable Integer idMsg) {
+        mensagemChatRepository.deleteById(idMsg);
     }
 }
